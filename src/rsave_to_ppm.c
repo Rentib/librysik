@@ -11,9 +11,9 @@ rysik_save_to_ppm(Rysik *rys, char *restrict filename)
   fprintf(fp, "P6\n%zu %zu\n255\n", rys->width, rys->height);
   for (uint32_t i = 0; i < rys->width * rys->height; ++i) {
     uint8_t color[3] = {
-        (rys->pixels[i] >> (8 * 0)) & 0xFF,
-        (rys->pixels[i] >> (8 * 1)) & 0xFF,
-        (rys->pixels[i] >> (8 * 2)) & 0xFF,
+        RYSIK_RED(rys->pixels[i]),
+        RYSIK_GREEN(rys->pixels[i]),
+        RYSIK_BLUE(rys->pixels[i]),
     };
     fwrite(color, 3, 1, fp);
   }

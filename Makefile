@@ -12,12 +12,12 @@ VPATH = src
 HDR = rysik.h src/internals.h
 OBJ = $(FUN:=.o)
 
-all: check
+all: librysik.a
 
 .o: .c $(HDR) $(CONFIG)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
-librysik.a: $(OBJ)
+librysik.a: $(OBJ) $(HDR)
 	$(AR) -rcs $@ $?
 
 test: test.c librysik.a
