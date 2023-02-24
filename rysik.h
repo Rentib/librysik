@@ -22,7 +22,7 @@ struct Rysik {
  * memory leak, the returned pointer must be deallocated with
  * rysik_destroy(). On failure, returns a null pointer.
  */
-extern Rysik *rysik_init(uint32_t width, uint32_t height);
+extern Rysik *rysik_init(size_t width, size_t height);
 
 /**
  * Destroys a structure previously created by rysik_init(). If \p rys is a null
@@ -48,5 +48,6 @@ extern void rysik_fill(Rysik *rys, uint32_t color);
 
 extern void rysik_rect(Rysik *rys, int x, int y, int width, int height,
                        uint32_t color);
+extern void rysik_circle(Rysik *rys, int x, int y, int radius, uint32_t color);
 
 #endif  // RYSIK_H

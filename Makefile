@@ -6,7 +6,8 @@ FUN =\
 		 rdestroy\
 		 rsave_to_ppm\
 		 rfill\
-		 rrectangle
+		 rrectangle\
+		 rcircle
 
 VPATH = src
 HDR = rysik.h src/internals.h

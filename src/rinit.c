@@ -3,7 +3,7 @@
 #include "internals.h"
 
 Rysik*
-rysik_init(uint32_t w, uint32_t h)
+rysik_init(size_t w, size_t h)
 {
   Rysik* r;
 

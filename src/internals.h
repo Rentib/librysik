@@ -38,6 +38,9 @@ blend_colors(uint32_t c1, uint32_t c2)
 static inline void
 horizontal_line(Rysik *rys, int x, int y, size_t w, uint32_t color)
 {
+  if (y < 0 || y >= (int)rys->height) return;
+  w = x < 0 ? w > (size_t)-x ? w + x : 0 : w;
+  x = MAX(x, 0);
   for (uint32_t *pixel = rys->pixels + x + rys->width * y; w--; ++pixel)
     *pixel = blend_colors(*pixel, color);
 }
