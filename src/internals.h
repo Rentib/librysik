@@ -44,3 +44,11 @@ horizontal_line(Rysik *rys, int x, int y, size_t w, uint32_t color)
   for (uint32_t *pixel = rys->pixels + x + rys->width * y; w--; ++pixel)
     *pixel = blend_colors(*pixel, color);
 }
+
+static inline void
+plot(Rysik *rys, int x, int y, uint32_t color)
+{
+  if (0 > x || x >= (int)rys->width || 0 > y || y >= (int)rys->height) return;
+  uint32_t *pixel = rys->pixels + x + rys->width * y;
+  *pixel = blend_colors(*pixel, color);
+}

@@ -49,5 +49,7 @@ extern void rysik_fill(Rysik *rys, uint32_t color);
 extern void rysik_rect(Rysik *rys, int x, int y, int width, int height,
                        uint32_t color);
 extern void rysik_circle(Rysik *rys, int x, int y, int radius, uint32_t color);
+extern void rysik_line(Rysik *rys, int x0, int y0, int x1, int y1,
+                       uint32_t color);
 
 #endif  // RYSIK_H
