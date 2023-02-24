@@ -8,7 +8,8 @@ FUN =\
 		 rfill\
 		 rrectangle\
 		 rcircle\
-		 rline
+		 rline\
+		 rtriangle
 
 VPATH = src
 HDR = rysik.h src/internals.h
