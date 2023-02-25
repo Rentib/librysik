@@ -15,3 +15,11 @@ rysik_init(size_t w, size_t h)
 
   return r;
 }
+
+void
+rysik_destroy(Rysik* rys)
+{
+  if (!rys) return;
+  free(rys->pixels);
+  free(rys);
+}

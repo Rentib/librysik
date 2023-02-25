@@ -1,5 +1,4 @@
 #include <stdint.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "../rysik.h"
@@ -40,7 +39,7 @@ horizontal_line(Rysik *rys, int x, int y, size_t w, uint32_t color)
 {
   if (y < 0 || y >= (int)rys->height) return;
   w = x < 0 ? w > (size_t)-x ? w + x : 0 : w;
-  x = MAX(x, 0);
+  x = MAX(x, 0), w = MIN(w, rys->width - x);
   for (uint32_t *pixel = rys->pixels + x + rys->width * y; w--; ++pixel)
     *pixel = blend_colors(*pixel, color);
 }

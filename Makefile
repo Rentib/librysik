@@ -2,14 +2,11 @@ CONFIG = config.mk
 include $(CONFIG)
 
 FUN =\
-		 rinit\
-		 rdestroy\
-		 rsave_to_ppm\
-		 rfill\
-		 rrectangle\
-		 rcircle\
-		 rline\
-		 rtriangle
+		 manage\
+		 save\
+		 rectangle\
+		 circle\
+		 triangle
 
 VPATH = src
 HDR = rysik.h src/internals.h
