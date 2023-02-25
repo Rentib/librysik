@@ -31,7 +31,7 @@ rysik_line(Rysik *rys, int x0, int y0, int x1, int y1, uint32_t color)
   int dy = -ABS(y1 - y0);
   int sy = y0 < y1 ? 1 : -1;
   int err = dx + dy;
-  while (true) {
+  while (1) {
     plot(rys, x0, y0, color);
     if (x0 == x1 && y0 == y1) break;
     int err2 = 2 * err;

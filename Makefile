@@ -1,9 +1,14 @@
-CONFIG = config.mk
-include $(CONFIG)
+VERSION = 1.0
+
+CC = cc
+AR = ar
+
+CPPFLAGS = -D_DEFAULT_SOURCE
+CFLAGS   = -std=c17 -pedantic -Wall -Wextra -Werror -Os
+LDGLAGS  = -s
 
 FUN =\
 		 manage\
-		 save\
 		 rectangle\
 		 circle\
 		 triangle
@@ -14,7 +19,7 @@ OBJ = $(FUN:=.o)
 
 all: librysik.a
 
-.o: .c $(HDR) $(CONFIG)
+.o: .c $(HDR)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
 librysik.a: $(OBJ) $(HDR)

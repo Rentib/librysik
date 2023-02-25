@@ -1,7 +1,6 @@
 #ifndef RYSIK_H
 #define RYSIK_H 1
 
-#include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 
@@ -30,14 +29,6 @@ extern Rysik *rysik_init(size_t width, size_t height);
  * \param rys - pointer to the structure to destroy.
  */
 extern void rysik_destroy(Rysik *rys);
-
-/**
- * Saves canvas into a ppm file.
- * \param rys - pointer to the structure storing a canvas to save;
- * \param filename - cstring representing a name of the file.
- * \return On success, returns true. On failure, returns false.
- */
-extern bool rysik_save_to_ppm(Rysik *rys, char *restrict filename);
 
 /**
  * Fills whole canvas stored in the structure pointed by \p rys with \p color.
