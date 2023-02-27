@@ -1,25 +1,13 @@
-#include <stdlib.h>
-
 #include "internals.h"
 
-Rysik*
-rysik_init(size_t w, size_t h)
+void
+rysik_init(Rysik *rys, size_t w, size_t h, uint32_t *pixels)
 {
-  Rysik* r;
-
-  if (!(r = malloc(sizeof(Rysik))) ||
-      !(r->pixels = calloc(w * h, sizeof(uint32_t))))
-    return NULL;
-  r->width = w;
-  r->height = h;
-
-  return r;
+  *rys = (Rysik){.width = w, .height = h, .pixels = pixels};
 }
 
 void
-rysik_destroy(Rysik* rys)
+rysik_destroy(Rysik *rys)
 {
   if (!rys) return;
-  free(rys->pixels);
-  free(rys);
 }

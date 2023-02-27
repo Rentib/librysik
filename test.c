@@ -30,8 +30,10 @@ save_to_ppm(Rysik *rys, char *restrict filename)
 int
 main(void)
 {
-  Rysik *rys;
-  rys = rysik_init(WIDTH, HEIGHT);
+  Rysik r, *rys = &r;
+  uint32_t pixels[WIDTH * HEIGHT];
+
+  rysik_init(rys, WIDTH, HEIGHT, pixels);
 
   rysik_fill(rys, 0xFF0000FF);
   rysik_rect(rys, 100, 100, 200, 300, 0xFFFF0000);

@@ -19,15 +19,19 @@ struct Rysik {
 };
 
 /**
- * Create a new struct storing a canvas of dimensions \p width by \p height with
- * all pixels initialized to black.
+ * Initializes a new Rysik object representing a canvas of dimensions \p width
+ * by \p height with pixels stored in \p pixels. The behavior is undefined if
+ * size of array pointer by \p pixels is less than \p width * \p height.
+ * \param rys - pointer to the structure storing a canvas;
  * \param width - width of canvas;
- * \param height - height of canvas.
+ * \param height - height of canvas;
+ * \param pixels - pointer to array of pixels.
  * \return On success, returns pointer to the
  * newly created structure. To avoid memory leak, the returned pointer must be
  * deallocated with rysik_destroy(). On failure, returns a null pointer.
  */
-extern Rysik *rysik_init(size_t width, size_t height);
+extern void rysik_init(Rysik *rys, size_t width, size_t height,
+                       uint32_t *pixels);
 
 /**
  * Destroys a structure previously created by rysik_init(). If \p rys is a null
