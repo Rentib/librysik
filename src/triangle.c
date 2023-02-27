@@ -41,7 +41,7 @@ rysik_triangle(Rysik *rys, int x0, int y0, int x1, int y1, int x2, int y2,
   if (y0 == y2) return;
 
   if (y0 == y1) {
-    top_triangle(rys, x0, y0, MIN(x1, x2), y1, MAX(x1, x2), color);
+    top_triangle(rys, x2, y2, MIN(x0, x1), y1, MAX(x0, x1), color);
   } else if (y1 == y2) {
     bot_triangle(rys, x0, y0, MIN(x1, x2), y1, MAX(x1, x2), color);
   } else {
