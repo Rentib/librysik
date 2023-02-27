@@ -5,7 +5,7 @@ AR = ar
 
 CPPFLAGS = -D_DEFAULT_SOURCE
 CFLAGS   = -std=c17 -pedantic -Wall -Wextra -Werror -Os
-LDGLAGS  = -s
+LDFLAGS  = -s
 
 FUN =\
 		 manage\
