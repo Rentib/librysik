@@ -50,3 +50,10 @@ rysik_triangle(Rysik *rys, int x0, int y0, int x1, int y1, int x2, int y2,
     bot_triangle(rys, x2, y2, MIN(x1, x3), y1, MAX(x1, x3), color);
   }
 }
+
+void
+rysik_convex(Rysik *rys, size_t n, int *x, int *y, uint32_t color)
+{
+  for (size_t i = 2; i < n; ++i)
+    rysik_triangle(rys, x[0], y[0], x[i - 1], y[i - 1], x[i], y[i], color);
+}

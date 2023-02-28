@@ -107,4 +107,15 @@ extern void rysik_line(Rysik *rys, int x0, int y0, int x1, int y1,
 extern void rysik_triangle(Rysik *rys, int x0, int y0, int x1, int y1, int x2,
                            int y2, uint32_t color);
 
+/**
+ * Fills a given convex polygon with \p color. Behavior is undefined if the
+ * given polygon is not convex.
+ * \param rys - pointer to the structure storing a canvas;
+ * \param n - number of vertices;
+ * \param x - pointer to array of x coordinates of points;
+ * \param y - pointer to array of y coordinates of points;
+ * \param color - color in RRGGBBAA format.
+ */
+extern void rysik_convex(Rysik *rys, size_t n, int *x, int *y, uint32_t color);
+
 #endif  // RYSIK_H
