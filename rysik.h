@@ -1,5 +1,5 @@
-#ifndef RYSIK_H
-#define RYSIK_H 1
+#ifndef RYSIK_H_
+#define RYSIK_H_ 1
 
 #include <stddef.h>
 #include <stdint.h>
@@ -118,4 +118,4 @@ extern void rysik_triangle(Rysik *rys, int x0, int y0, int x1, int y1, int x2,
  */
 extern void rysik_convex(Rysik *rys, size_t n, int *x, int *y, uint32_t color);
 
-#endif  // RYSIK_H
+#endif  // RYSIK_H_
